@@ -1,5 +1,5 @@
 // Make me compile!
-
+#[derive(Debug)]
 struct Foo {
     capacity: i32,
 }
