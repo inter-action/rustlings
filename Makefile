@@ -8,3 +8,5 @@ t = ""
 cpl:
 	rustc --out-dir bin $(t)
 
+testc:
+	rustc --test --out-dir bin $(t)
