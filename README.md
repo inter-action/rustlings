@@ -152,3 +152,6 @@ array:
 Tuple:
 
     rust tuple index start at 0. not like scala which start at 1
+
+move_semantics 需要注意下
+
