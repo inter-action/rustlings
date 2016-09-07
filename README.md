@@ -155,3 +155,11 @@ Tuple:
 
 move_semantics 需要注意下
 
+
+const declaration:
+
+note you cant use `str` instead of `&'static str` , perhaps because `str` is for local variables
+
+    pub const HILLARY_CLINTON: &'static str = "Hillary Clinton";
+    pub const BERNIE_SANDERS: &'static str = "Bernie Sanders";
+
