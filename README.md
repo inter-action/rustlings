@@ -1,3 +1,19 @@
+# progress
+
+    ├── error_handling                      # errorsn.rs is left un-done.
+    ├── functions                           # ok,
+    ├── if                                  # ok,
+    ├── modules                             # ok
+    ├── move_semantics                      # ok
+    ├── primitive_types                     # ok
+    ├── standard_library_types
+    ├── strings                             # ok
+    ├── tests                               # ok
+    ├── threads
+    └── variables                           # ok
+
+
+
 # rustlings
 
 Small exercises to get you used to reading and writing Rust code. Includes practice reading and responding to

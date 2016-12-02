@@ -1,8 +1,53 @@
+# Notes
+
+rust lang:
+* `&'static` in modules folder, means it's a global lifetime string
+* array notation: `let a = [0; 101];`
+* unlike scala, rust tuple index start from 0
+
+
+this repo:
+* rust modules system is isolated, parent scope defined func are not automatically imported. see test/test3
+* revisit error_handling case 3, main cant have result type.
+* revisit errorsn.rs, creation of customized error type
+
+
+frequent traits:
+* std::fmt::Display, for {} in print!
+
+
+
+# rust
+
+* ! tait object: https://doc.rust-lang.org/beta/book/trait-objects.html
+&Foo, or Box<Foo>, these two way create a dynamic link functional, which is trait object
+todo: #object-safety, what is `object safety`, Self: Sized
+
+    fn do_something(x: &Foo) { // compile only one copy
+        x.method();
+    }
+
+    fn main() {
+        let x = "Hello".to_string();
+        do_something(&x);
+    }
+
+
+
+
+
 #todos
     done:
 
     pending:
         figure out rust lifetime 
+        array vs slice
+        "Hi! My name is Beyoncé".into() this into does ?
+        sized & unsized datatypes
+        smart pointer
+        https://doc.rust-lang.org/stable/book/error-handling.html#standard-library-traits-used-for-error-handling
+
+
 
 
 
