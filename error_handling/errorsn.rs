@@ -18,13 +18,16 @@ use std::error;
 use std::fmt;
 use std::io;
 
+// read this before you try to solve this
+// https://doc.rust-lang.org/stable/book/error-handling.html#standard-library-traits-used-for-error-handling
+
 // PositiveNonzeroInteger is a struct defined below the tests.
-fn read_and_validate(b: &mut io::BufRead) -> Result<PositiveNonzeroInteger, ???> {
+fn read_and_validate(b: &mut io::BufRead) -> Result<PositiveNonzeroInteger, Box<error::Error>> {
     let mut line = String::new();
-    b.read_line(&mut line);
-    let num: i64 = line.trim().parse();
-    let answer = PositiveNonzeroInteger::new(num);
-    answer
+    try!(b.read_line(&mut line));
+    let num: i64 = try!(line.trim().parse());
+    let answer = try!(PositiveNonzeroInteger::new(num));
+    Ok(answer)
 }
 
 // This is a test helper function that turns a &str into a BufReader.
@@ -94,13 +97,13 @@ enum CreationError {
 
 impl fmt::Display for CreationError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        f.write_str((self as &error::Error).description())// :todo: is this explicit conversion needed?
+        f.write_str((self as &error::Error).description())//:bm
     }
 }
 
 impl error::Error for CreationError {
     fn description(&self) -> &str {
-        match *self { // :todo: *?; self is a pointer, match a pointer doesnt make sense ?
+        match *self {
             CreationError::Negative => "Negative",
             CreationError::Zero => "Zero",
         }

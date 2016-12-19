@@ -9,7 +9,7 @@ rust lang:
 this repo:
 * rust modules system is isolated, parent scope defined func are not automatically imported. see test/test3
 * revisit error_handling case 3, main cant have result type.
-* revisit errorsn.rs, creation of customized error type
+* revisit errorsn.rs, creation of customized error type, From trait usage.
 
 
 frequent traits:

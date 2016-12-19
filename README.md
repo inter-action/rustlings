@@ -1,6 +1,6 @@
 # progress
 
-    ├── error_handling                      # errorsn.rs is left un-done.
+    ├── error_handling                      # ok, errorsn.rs is a important file.
     ├── functions                           # ok,
     ├── if                                  # ok,
     ├── modules                             # ok
