@@ -4,6 +4,11 @@ rust lang:
 * `&'static` in modules folder, means it's a global lifetime string
 * array notation: `let a = [0; 101];`
 * unlike scala, rust tuple index start from 0
+* convert Vec<Result<i32, Err>> to Result<Vec<i32>, Err>>, in standard_library_types folder.
+    see 
+        http://stackoverflow.com/questions/26368288/how-do-i-stop-iteration-and-return-an-error-when-iteratormap-returns-a-result
+        https://doc.rust-lang.org/std/result/enum.Result.html#method.from_iter
+
 
 
 this repo:

@@ -1,3 +1,7 @@
+# See todo.txt for notes:
+
+    :bm     #bookmark
+
 # progress
 
     ├── error_handling                      # ok, errorsn.rs is a important file.
@@ -6,13 +10,22 @@
     ├── modules                             # ok
     ├── move_semantics                      # ok
     ├── primitive_types                     # ok
-    ├── standard_library_types
+    ├── standard_library_types              # ok
     ├── strings                             # ok
     ├── tests                               # ok
     ├── threads
     └── variables                           # ok
 
 
+
+# Snippets:
+
+    //-
+    let numbers: Vec<_> = (0..100u32).collect();
+
+
+    //-
+    
 
 # rustlings
 
