@@ -1,4 +1,13 @@
 pub fn factorial(num: u64) -> u64 {
+    // solution A
+    // match num {
+    //     1 => 1,
+    //     e @ _ => num * factorial(e-1)
+    // }
+
+    // solution B
+    (1..num+1).fold(1, |s, x| x*s)
+    
     // Complete this function to return factorial of num
     // Do not use:
     // - return
