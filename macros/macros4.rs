@@ -3,10 +3,11 @@
 macro_rules! my_macro {
     () => {
         println!("Check out my macro!");
-    }
+    }; // https://rustbyexample.com/macros/overload.html
+    //  ^ each arm must end with a semicolon.
     ($val:expr) => {
         println!("Look at this other macro: {}", $val);
-    }
+    };
 }
 
 fn main() {

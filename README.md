@@ -7,7 +7,7 @@
     ├── error_handling                      # ok, errorsn.rs is a important file.
     ├── functions                           # ok,
     ├── if                                  # ok,
-    ├── macros
+    ├── macros                              # ok,  
     ├── modules                             # ok
     ├── move_semantics                      # ok
     ├── primitive_types                     # ok
