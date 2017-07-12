@@ -5,6 +5,7 @@
 // you've got it :)
 
 use std::sync::Arc;
+use std::sync::Mutex;
 use std::thread;
 use std::time::Duration;
 
@@ -13,15 +14,19 @@ struct JobStatus {
 }
 
 fn main() {
-    let status = Arc::new(JobStatus { jobs_completed: 0 });
-    let status_shared = status.clone();
+    let status = Arc::new(Mutex::new(JobStatus { jobs_completed: 0 }));
+    // this line is quite important, if we use status reference, the status would be consumed in spawn
+    // closure and cant be used in while loop anymore, so we fix this by creating a cloned variable.
+    let shared_status = status.clone(); 
     thread::spawn(move || {
         for _ in 0..10 {
             thread::sleep(Duration::from_millis(250));
-            status_shared.jobs_completed += 1;
+            if let Ok(ref mut s) = shared_status.lock() {
+                s.jobs_completed += 1;
+            }
         }
     });
-    while status.jobs_completed < 10 {
+    while status.lock().unwrap().jobs_completed < 10 {
         println!("waiting... ");
         thread::sleep(Duration::from_millis(500));
     }

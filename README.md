@@ -7,14 +7,16 @@
     ├── error_handling                      # ok, errorsn.rs is a important file.
     ├── functions                           # ok,
     ├── if                                  # ok,
+    ├── macros
     ├── modules                             # ok
     ├── move_semantics                      # ok
     ├── primitive_types                     # ok
     ├── standard_library_types              # ok
     ├── strings                             # ok
     ├── tests                               # ok
-    ├── threads
+    ├── threads                             # ok
     └── variables                           # ok
+
 
 
 
